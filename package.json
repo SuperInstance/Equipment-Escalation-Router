@@ -19,18 +19,20 @@
   ],
   "author": "SuperInstance Ecosystem",
   "license": "MIT",
-  "dependencies": {
-    "@superinstance/starter-agent": "^1.0.0"
-  },
   "devDependencies": {
+    "@types/node": "^20.0.0",
     "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "vitest": "^4.1.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/superinstance/equipment-escalation-router"
+    "url": "git+https://github.com/superinstance/equipment-escalation-router.git"
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/superinstance/equipment-escalation-router/issues"
+  },
+  "homepage": "https://github.com/superinstance/equipment-escalation-router#readme"
 }
