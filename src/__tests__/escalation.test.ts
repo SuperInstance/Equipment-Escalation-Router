@@ -8,6 +8,7 @@ import {
   DecisionRouter,
   CostOptimizer,
   HumanEscalation,
+  DecisionFactors,
 } from '../index';
 
 // ═══════════════════════════════════════════════════════════════════
@@ -56,7 +57,7 @@ describe('DecisionRouter', () => {
   });
 
   it('should learn patterns', async () => {
-    dr.learnPattern('deploy to production', { tier: 'human', confidence: 0.95 });
+    dr.learnPattern('deploy to production', { tier: 'human', success: true, factors: {} as DecisionFactors });
     const result = await dr.decide({ query: 'deploy to production' });
     expect(result).toBeDefined();
   });

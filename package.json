@@ -1,5 +1,5 @@
 {
-  "name": "@superinstance/equipment-escalation-router",
+  "name": "equipment-escalation-router",
   "version": "1.0.0",
   "description": "Intelligent LLM routing equipment: Bot→Brain→Human with 40x cost reduction",
   "main": "dist/index.js",

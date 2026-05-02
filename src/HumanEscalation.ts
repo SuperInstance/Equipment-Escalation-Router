@@ -4,7 +4,7 @@
  * Manages escalation to human operators for high-stakes decisions
  */
 
-import { RoutingTier } from './EscalationRouter';
+
 
 /**
  * Escalation priority levels
@@ -243,7 +243,7 @@ export class HumanEscalation {
   /**
    * Cancel a pending escalation
    */
-  async cancel(requestId: string, reason: string): Promise<void> {
+  async cancel(requestId: string): Promise<void> {
     const pending = this.pendingQueue.get(requestId);
     if (!pending) {
       throw new Error(`Escalation request ${requestId} not found`);

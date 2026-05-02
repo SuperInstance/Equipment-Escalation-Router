@@ -191,11 +191,14 @@ export class EscalationRouter {
         timestamp: new Date()
       });
 
-      return {
+      const result = {
         ...cachedResult,
         cached: true,
-        processingTimeMs: Date.now() - startTime
+        processingTimeMs: Date.now() - startTime,
+        fallbackChain: (cachedResult as any).fallbackChain || [],
+        timestamp: (cachedResult as any).timestamp || new Date()
       };
+      return result as RoutingResult;
     }
 
     // Make routing decision
@@ -237,11 +240,7 @@ export class EscalationRouter {
       await this.costOptimizer.cachePattern(request.query, {
         tier,
         decision,
-        cost: this.tiers[tier].costPerRequest,
-        cached: false,
-        fallbackChain,
-        timestamp: new Date(),
-        processingTimeMs: Date.now() - startTime
+        cost: this.tiers[tier].costPerRequest
       });
     }
 
